@@ -13,7 +13,7 @@ function BigNew({ bigNew }) {
 
       <div className="relative flex-1 overflow-hidden md:rounded-xl cursor-pointer">
         <img
-          src={bigNew?.image || bigNew?.urlToImage}
+          src={bigNew?.image || bigNew?.urlToImage || bigNew?.image_url || bigNew?.image_url || bigNew?.multimedia.default.url ||  image }
           alt="News"
           className="lg:absolute inset-0 w-full h-full object-cover hover:rounded-xl hover:scale-105 transition-all ease-in-out duration-400"
         />
@@ -21,7 +21,7 @@ function BigNew({ bigNew }) {
 
       <div className="flex gap-4 p-3 ">
         <div className="sm:text-lg md:text-xl lg:text-2xl font-bold cursor-pointer hover:text-gray-700 transition-all ease-in-out duration-400 mt-1">
-          {bigNew?.title}
+          {bigNew?.title || bigNew?.headline.main || bigNew?.fields.headline}
         </div>
       </div>
 

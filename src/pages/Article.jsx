@@ -11,7 +11,6 @@ function Article() {
 
   const article = allArticles.find(item => item.url === decodedId);
 
-  console.log(allArticles)
   if (!article) return <p>Article not found</p>;
 
   return (
@@ -21,7 +20,7 @@ function Article() {
     {/* IMAGE */}
     <div className="w-full h-96 bg-gray-100">
       <img
-        src={article.urlToImage}
+        src={article.urlToImage || article?.image || article?.urlToImage || article?.image_url}
         alt={article.title}
         className="w-full h-full object-cover"
       />

@@ -60,9 +60,10 @@ export function FootballProvider({ children }) {
     useEffect(() => {
       async function fetchNews(){
         try {
-            const res = await fetch(`https://newsapi.org/v2/everything?q=premier+league&language=en&apiKey=${import.meta.env.VITE_FOOTBALL_NEWS_API_KEY}`)
+            const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=premier+league&api-key=${import.meta.env.VITE_FOOTBALL_NEWS_API_KEY}`)
             const result = await res.json()
-            setFootballNews(result.articles)
+            console.log(result)
+            setFootballNews(result.response.docs)
         } catch (err) {
             console.log(err)
         }

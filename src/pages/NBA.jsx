@@ -1,4 +1,4 @@
-import React, { useContext  } from 'react'
+import { useContext} from 'react'
 import HeroSports from '../components/sportsarticles/HeroSports'
 import SecondSports from '../components/sportsarticles/SecondSports'
 import { NBAContext } from '../context/NBAContext'

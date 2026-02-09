@@ -5,8 +5,8 @@ import { F1Context } from '../context/F1Context';
 
 function F1() {
   const  { f1News, f1Teams, f1Drivers }  = useContext(F1Context)
-  const hero = f1News?.slice(16,19) || []
-  const firstOther = f1News?.slice(20,25) || []
+  const hero = f1News?.slice(0,3) || []
+  const firstOther = f1News?.slice(3,8) || []
   
   return (
     <>  

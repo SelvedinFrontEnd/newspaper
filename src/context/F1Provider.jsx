@@ -57,11 +57,10 @@ export function F1Provider({ children }) {
     useEffect(() => {
         async function fetchNews(){
           try {
-              const res = await fetch(`https://newsapi.org/v2/everything?q=f1&language=en&apiKey=${import.meta.env.VITE_F1_NEWS_API_KEY}`)
+              const res = await fetch(`https://gnews.io/api/v4/search?q=f1&lang=en&max=10&apikey=${import.meta.env.VITE_F1_NEWS_API_KEY}`)
               const result = await res.json()
               
-              const final = result.articles.filter(article => article.title.includes("F1"))
-              setF1News(final)
+              setF1News(result.articles)
           } catch (err) {
               console.log(err)
           }

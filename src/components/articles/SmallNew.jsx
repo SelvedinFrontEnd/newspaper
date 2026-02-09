@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import image from "../../images/nba.webp"
 
 function SmallNew({news}) {
   
@@ -10,7 +11,7 @@ function SmallNew({news}) {
       
       <div className="flex-1 min-h-0 rounded-2xl aspect-video overflow-hidden">
         <img
-          src={news?.image || news?.urlToImage}
+          src={news?.image || news?.urlToImage || news?.image_url || news?.multimedia.default.url || image}
           alt="News image"
           className="w-full h-full rounded-2xl cursor-pointer transition-all duration-300 ease-in hover:scale-102 object-cover"
         />
@@ -20,7 +21,7 @@ function SmallNew({news}) {
       <div className="flex pt-2 gap-4 pl-2 min-w-0">
         
         <h2 className="md:h-13 mt-1 min-w-0 line-clamp-2 sm:text-sm md:text-base lg:text-lg font-bold cursor-pointer hover:text-gray-700 transition-all duration-400">
-          {news?.title}
+          {news?.title || news?.headline.main || news?.fields.headline}
         </h2>
       </div>
     </Link>

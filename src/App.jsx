@@ -8,7 +8,6 @@ import Article from "./pages/Article";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
-    
   return (
       <div className=" bg-gray-200 text-gray-900 z-0">
         <Navbar />

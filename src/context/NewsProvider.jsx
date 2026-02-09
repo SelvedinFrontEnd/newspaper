@@ -7,18 +7,23 @@ export function NewsProvider({ children }) {
     const [news, setNews] = useState([])
     const [fixtures, setFixtures] = useState([])
 
-      useEffect(() => {
-        async function fetchNews(){
-            try {
-                const res = await fetch(`https://newsapi.org/v2/everything?q=sport&language=en&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`)
-                const result = await res.json()
-                setNews(result.articles)
-            } catch (err) {
-                console.log(err)
-            }
+     useEffect(() => {
+      async function fetchNews() {
+        try {
+          const res = await fetch(
+            `https://api.currentsapi.services/v1/latest-news?language=en&category=sports&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`
+          );
+
+          const result = await res.json();
+          console.log(result)
+          setNews(result.news);
+        } catch (err) {
+          console.error(err);
         }
-        fetchNews()
-        }, [])
+      }
+
+      fetchNews();
+    }, []);
 
 
     useEffect(() => {

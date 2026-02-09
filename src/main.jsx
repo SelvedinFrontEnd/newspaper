@@ -9,6 +9,7 @@ import { F1Provider } from './context/F1Provider.jsx'
 import { ArticlesProvider } from './context/ArticlesProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
+  
   <StrictMode>
     <NewsProvider>
       <FootballProvider>
