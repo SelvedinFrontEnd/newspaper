@@ -7,7 +7,6 @@ function F1() {
   const  { f1News, f1Teams, f1Drivers }  = useContext(F1Context)
   const hero = f1News?.slice(0,3) || []
   const firstOther = f1News?.slice(3,8) || []
-  
   return (
     <>  
         <div>

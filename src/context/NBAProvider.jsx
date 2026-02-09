@@ -45,9 +45,9 @@ export function NBAProvider({ children }) {
   useEffect(() => {
     async function fetchNews() {
       try {
-        const res = await fetch(`https://newsdata.io/api/1/latest?apikey=${import.meta.env.VITE_NBA_NEWS_API_KEY}&q=nba&language=en`)
+        const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=nba&api-key=${import.meta.env.VITE_NBA_NEWS_API_KEY}`)
         const result = await res.json()
-        setNbaNews(result.results)
+        setNbaNews(result.response.docs)
       } catch(err) {
         console.log(err)
       }

@@ -11,12 +11,11 @@ export function NewsProvider({ children }) {
       async function fetchNews() {
         try {
           const res = await fetch(
-            `https://api.currentsapi.services/v1/latest-news?language=en&category=sports&apiKey=${import.meta.env.VITE_NEWS_API_KEY}`
+            `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=sport&api-key=${import.meta.env.VITE_NEWS_API_KEY}`
           );
 
           const result = await res.json();
-          console.log(result)
-          setNews(result.news);
+          setNews(result.response.docs);
         } catch (err) {
           console.error(err);
         }

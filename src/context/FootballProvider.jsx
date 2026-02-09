@@ -62,7 +62,6 @@ export function FootballProvider({ children }) {
         try {
             const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=premier+league&api-key=${import.meta.env.VITE_FOOTBALL_NEWS_API_KEY}`)
             const result = await res.json()
-            console.log(result)
             setFootballNews(result.response.docs)
         } catch (err) {
             console.log(err)
