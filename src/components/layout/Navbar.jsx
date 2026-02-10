@@ -35,7 +35,7 @@ function Navbar() {
           `}
         >
 
-          <ul className="text-3xl font-bold space-y-4">
+          <ul className="text-3xl flex flex-col font-bold space-y-4">
             <Link to="/" className="cursor-pointer">Home</Link>
             <Link to="football" className="cursor-pointer">Football</Link>
             <Link to="/nba" className="cursor-pointer">NBA</Link>
