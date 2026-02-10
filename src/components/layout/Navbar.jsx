@@ -36,10 +36,10 @@ function Navbar() {
         >
 
           <ul className="text-3xl font-bold space-y-4">
-            <li className="cursor-pointer">Home</li>
-            <li className="cursor-pointer">Football</li>
-            <li className="cursor-pointer">NBA</li>
-            <li className="cursor-pointer">F1</li>
+            <Link to="/" className="cursor-pointer">Home</Link>
+            <Link to="football" className="cursor-pointer">Football</Link>
+            <Link to="/nba" className="cursor-pointer">NBA</Link>
+            <Link to="/f1" className="cursor-pointer">F1</Link>
           </ul>
         </div>
 
