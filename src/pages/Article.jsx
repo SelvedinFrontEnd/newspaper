@@ -9,10 +9,11 @@ function Article() {
 
   const decodedId = decodeURIComponent(id);
 
-  const article = allArticles.find(item => item.url === decodedId);
+  const article = allArticles.find(item => item.url || item.web_url === decodedId);
 
   if (!article) return <p>Article not found</p>;
 
+  console.log(article)
   return (
     <div className="min-h-screen bg-gray-200 py-10">
   <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden">
@@ -20,7 +21,7 @@ function Article() {
     {/* IMAGE */}
     <div className="w-full h-96 bg-gray-100">
       <img
-        src={article.urlToImage || article?.image || article?.urlToImage || article?.image_url}
+        src={article.urlToImage || article?.image || article?.urlToImage || article?.image_url || article?.multimedia.default.url }
         alt={article.title}
         className="w-full h-full object-cover"
       />
@@ -31,33 +32,33 @@ function Article() {
 
       {/* TITLE */}
       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        {article.title}
+        {article.title || article?.headline.main }
       </h1>
 
       {/* META */}
       <div className="flex flex-wrap gap-2 text-sm text-gray-500 mb-6">
-        {article.author && <span>By {article.author}</span>}
-        {article.source?.name && <span>• {article.source.name}</span>}
+        {article.author || article.byline.original && <span>By {article.author || article.byline.original}</span>}
+        {article.source && <span>• {article.source}</span>}
       </div>
 
       {/* DESCRIPTION */}
-      {article.description && (
+      {article.snippet && (
         <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          {article.description}
+          {article.snippet}
         </p>
       )}
 
       {/* CONTENT (PARTIAL – INTENTIONAL) */}
-      {article.content && (
+      {article.abstract && (
         <p className="text-gray-700 leading-7 mb-8">
-          {article.content.split("[+")[0]}
+          {article.abstract.split("[+")[0]}
         </p>
       )}
 
       {/* SOURCE LINK */}
       <div className="border-t pt-6">
         <a
-          href={article.url}
+          href={article.web_url}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-blue-600 font-semibold hover:underline"
