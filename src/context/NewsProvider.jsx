@@ -36,7 +36,6 @@ export function NewsProvider({ children }) {
       }
     );
     const data = await res.json();
-    console.log(data.response)
     setFixtures(data.response);
   }
   fetchFixtures();
