@@ -57,7 +57,7 @@ export function F1Provider({ children }) {
     useEffect(() => {
         async function fetchNews(){
           try {
-              const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=f1&api-key=${import.meta.env.VITE_F1_NEWS_API_KEY}`)
+              const res = await fetch(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=formula+1&api-key=${import.meta.env.VITE_F1_NEWS_API_KEY}`)
               const result = await res.json()
               
               setF1News(result.response.docs)

@@ -6,7 +6,7 @@ function SmallNew({news}) {
   return (
     <Link 
     className="flex flex-col h-full m-6 md:m-0" 
-    to={`/article/${encodeURIComponent(news?.url)}`}>
+    to={`/article/${encodeURIComponent(news?.web_url)}`}>
       
       
       <div className="flex-1 min-h-0 rounded-2xl aspect-video overflow-hidden">
