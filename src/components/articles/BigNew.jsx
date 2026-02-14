@@ -7,7 +7,7 @@ function BigNew({ bigNew }) {
   
   return (
     <Link
-      to={`/article/${encodeURIComponent(bigNew?.url || bigNew?.web_url)}`}
+      to={`/article/${encodeURIComponent(bigNew?.web_url)}`}
       className="h-full flex flex-col"
     >
 

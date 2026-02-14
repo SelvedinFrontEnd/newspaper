@@ -3,7 +3,7 @@ import { db } from "../components/utils/firebase/Firebase"
 
 import { useParams } from "react-router-dom";
 import { ArticlesContext } from "../context/ArticlesContext";
-import { addDoc, collection, getDocs, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { addDoc, collection, onSnapshot, orderBy, query, where } from "firebase/firestore";
 
 function Article() {
   const { allArticles } = useContext(ArticlesContext);

@@ -36,10 +36,10 @@ function Navbar() {
         >
 
           <ul className="text-3xl flex flex-col font-bold space-y-4">
-            <Link to="/" className="cursor-pointer">Home</Link>
-            <Link to="football" className="cursor-pointer">Football</Link>
-            <Link to="/nba" className="cursor-pointer">NBA</Link>
-            <Link to="/f1" className="cursor-pointer">F1</Link>
+            <Link onClick={() => setOpen(false)} to="/" className="cursor-pointer">Home</Link>
+            <Link onClick={() => setOpen(false)} to="football" className="cursor-pointer">Football</Link>
+            <Link onClick={() => setOpen(false)} to="/nba" className="cursor-pointer">NBA</Link>
+            <Link onClick={() => setOpen(false)} to="/f1" className="cursor-pointer">F1</Link>
           </ul>
         </div>
 

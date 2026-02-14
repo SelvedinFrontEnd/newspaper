@@ -64,7 +64,7 @@ export function FootballProvider({ children }) {
             const result = await res.json()
             setFootballNews(result.response.docs)
         } catch (err) {
-            console.log(err)
+            console.log(err)   
         }
       }
 
